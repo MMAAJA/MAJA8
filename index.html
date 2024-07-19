@@ -84,7 +84,7 @@
             if (volquetas[placa] !== undefined) {
                 const volumenInicial = volquetas[placa].volumen;
                 const constante = volquetas[placa].constante;
-                const medidaAjustada = medida * constante;
+                const medidaAjustada = medida * constante/100;
                 let volumenRestante = volumenInicial - medidaAjustada;
 
                 if (isNaN(medida) || medida < 0) {
@@ -107,7 +107,7 @@
         <h1>Buscar Volqueta</h1>
         <label for="placa">Ingresa la placa de la volqueta:</label>
         <input type="text" id="placa" placeholder="Ejemplo: ABC123"><br>
-        <label for="medida">Ingresa la medida a descontar:</label>
+        <label for="medida">Ingresa la medida a descontar en cm:</label>
         <input type="number" id="medida" placeholder="Ejemplo: 5"><br>
         <button onclick="mostrarVolqueta()">Buscar</button>
 
