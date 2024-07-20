@@ -69,7 +69,7 @@
     <script>
         // Lista de volquetas con sus respectivos volúmenes y constantes
         const volquetas = {
-            'ABC123': { volumen: 10, constante: 1.2 },
+            'LKL926': { volumen: 22.58, constante: 14.976 },
             'XYZ789': { volumen: 15, constante: 1.5 },
             'LMN456': { volumen: 20, constante: 1.1 }
         };
@@ -92,7 +92,7 @@
                     resultado.innerHTML = '';
                 } else {
                     if (volumenRestante < 0) volumenRestante = 0; // Para no tener volúmenes negativos
-                    resultado.innerHTML = `La volqueta con placa <strong>${placa}</strong> tiene un volumen restante de <span id="volumenRestante">${volumenRestante.toFixed(2)} m³</span>`;
+                    resultado.innerHTML = `La volqueta con placa <strong>${placa}</strong> tiene un volumen de:  <span id="volumenRestante">${volumenRestante.toFixed(2)} m³</span>`;
                     mensajeError.innerHTML = '';
                 }
             } else {
@@ -104,7 +104,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Buscar Volqueta</h1>
+        <h1>INCIL S.A.S</h1>
         <label for="placa">Ingresa la placa de la volqueta:</label>
         <input type="text" id="placa" placeholder="Ejemplo: ABC123"><br>
         <label for="medida">Ingresa la medida a descontar en cm:</label>
