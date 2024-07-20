@@ -70,21 +70,25 @@
         // Lista de volquetas con sus respectivos volúmenes y constantes
         const volquetas = {
             'LKL926': { volumen: 22.58, constante: 14.976 },
-            'XYZ789': { volumen: 15, constante: 1.5 },
-            'LMN456': { volumen: 20, constante: 1.1 }
+            'SNV658': { volumen: 16.88, constante: 10.927 },
+            'LKL459': { volumen: 22, constante: 14.784 },
+            'LKL686': { volumen: 22.58, constante: 14.976 },
+            'LKL725': { volumen: 22.58, constante: 14.976 },
+            'SNW597': { volumen: 16.70, constante: 10.927 }
         };
 
         // Función para buscar la placa y mostrar el volumen
         function mostrarVolqueta() {
             const placa = document.getElementById('placa').value.toUpperCase();
-            const medida = parseFloat(document.getElementById('medida').value);
+            const medidaInput = document.getElementById('medida').value;
+            const medida = parseFloat(medidaInput) || 0;  // Asumir que la medida es 0 si no se ingresa
             const resultado = document.getElementById('resultado');
             const mensajeError = document.getElementById('mensajeError');
 
             if (volquetas[placa] !== undefined) {
                 const volumenInicial = volquetas[placa].volumen;
                 const constante = volquetas[placa].constante;
-                const medidaAjustada = medida * constante/100;
+                const medidaAjustada = medida * constante / 100;
                 let volumenRestante = volumenInicial - medidaAjustada;
 
                 if (isNaN(medida) || medida < 0) {
@@ -92,7 +96,7 @@
                     resultado.innerHTML = '';
                 } else {
                     if (volumenRestante < 0) volumenRestante = 0; // Para no tener volúmenes negativos
-                    resultado.innerHTML = `La volqueta con placa <strong>${placa}</strong> tiene un volumen de:  <span id="volumenRestante">${volumenRestante.toFixed(2)} m³</span>`;
+                    resultado.innerHTML = `La volqueta con placa <strong>${placa}</strong> tiene un volumen de: <span id="volumenRestante">${volumenRestante.toFixed(2)} m³</span>`;
                     mensajeError.innerHTML = '';
                 }
             } else {
